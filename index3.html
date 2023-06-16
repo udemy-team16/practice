@@ -15,8 +15,8 @@
     setInterval(() => {
       const timer = new Date();
 
-      let hour = String(timer.getHours()).padStart(2, '0');
-      let min = String(timer.getMinutes()).padStart(2, '0');
+      let hour = String(timer.getHours()).padStart(2, '0'); 
+      let min = String(timer.getMinutes()).padStart(2, '0'); 
       let sec = String(timer.getSeconds()).padStart(2, '0');
       document.getElementById('timer').innerText = `현재시각 : ${hour}시${min}분${sec}초`;
     }, 1000)

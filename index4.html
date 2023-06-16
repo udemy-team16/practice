@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="box">
+    <img
+      src="https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/8c45226c-fc0c-4ae4-ad40-43fb10b37582/%ED%8C%80%EC%9D%84-%EC%A0%84%EC%A7%84%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EC%84%9C%EB%A1%9C-%EB%8B%A4%EB%A5%B8-%ED%9E%98-%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C-%EC%B6%95%EA%B5%AC-%EC%84%A0%EC%88%98.jpg"
+      alt="" width="400px" height="400px" id="img">
+  </div>
+  <button id="prev">이전</button>
+  <button id="next">다음</button>
+
+  <script>
+    const images = [
+      'https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/8c45226c-fc0c-4ae4-ad40-43fb10b37582/%ED%8C%80%EC%9D%84-%EC%A0%84%EC%A7%84%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EC%84%9C%EB%A1%9C-%EB%8B%A4%EB%A5%B8-%ED%9E%98-%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C-%EC%B6%95%EA%B5%AC-%EC%84%A0%EC%88%98.jpg',
+      'https://cdnimage.dailian.co.kr/news/202302/news_1675729805_1199458_m_1.jpeg',
+    ]
+
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let page = 0;
+
+    prev.addEventListener('click', function(){
+      page -= 1
+      document.getElementById('img').src = images[page];
+      if(page === -1){
+        document.getElementById('img').src = images[images.length - 1];
+        page = images.length - 1;
+      }
+    })
+    next.addEventListener('click', function(){
+      page += 1
+      document.getElementById('img').src = images[page];
+      if(page === images.length){
+        document.getElementById('img').src = images[0];
+        page = 0;
+      }
+    })
+      
+
+    
+  </script>
+</body>
+
+</html>
