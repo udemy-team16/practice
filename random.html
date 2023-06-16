@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="./imgs/1.jpg"
+      id="img"
+      style="width: 300px; height: 300px; border: 1px solid black"
+      onclick="onclickRandom()"
+    />
+    <p id="clock"></p>
+    <script>
+      const imgs = ["imgs/1.jpg", "imgs/2.jpg", "imgs/3.jpg", "imgs/4.jpg"];
+      function onclickRandom() {
+        document.getElementById("img").src =
+          imgs[Math.floor(Math.random() * imgs.length)];
+      }
+
+      function realTime() {
+        let time = new Date();
+        let hours = time.getHours();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+        document.getElementById(
+          "clock"
+        ).innerHTML = `${hours}시 ${minutes}분  ${seconds}초`;
+      }
+      setInterval(realTime, 1000);
+    </script>
+  </body>
+</html>
