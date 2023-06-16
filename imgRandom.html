@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+  </head>
+  <body>
+    <div class="img-box"></div>
+    <img
+      src="./images/img1.jpg
+    "
+      alt=""
+      width="500"
+      height="500"
+      id="img"
+      onclick="imgChange()"
+    />
+
+  </body>
+  <script>
+    const img = document.querySelector("img");
+    const imgSrcArray = [
+      "img1",
+      "img2",
+      "img3",
+      "img4",
+      "img5",
+      "img6",
+      "img7",
+      "img8",
+      "img9",
+    ];
+
+    function imgChange() {
+      let rndNum = Math.floor(Math.random() * 8);
+      console.log(rndNum);
+      document.getElementById(
+        "img"
+      ).src = `./images/${imgSrcArray[rndNum]}.jpg`;
+    }
+  </script>
+</html>
