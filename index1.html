@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="script" href="index1.js" />
+  </head>
+  <body>
+    <h1 id="frist"></h1>
+    <div onkeyup="userKeyUp()">
+      <input type="number" id="f" />
+      <select name="" id="bu" onchange="userKeyUp()">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="number" id="s" />
+      <p id="result"></p>
+
+      <button>getElementByName</button>
+    </div>
+    <script>
+      const userKeyUp = () => {
+        const fr = document.getElementById("f").value;
+        const bu = document.getElementById("bu").value;
+        const se = document.getElementById("s").value;
+
+        if (fr !== "" && se !== "" && bu === "+") {
+          document.getElementById("result").innerText = `결과: ${
+            Number(fr) + Number(se)
+          }`;
+        } else if (fr !== "" && se !== "" && bu === "-") {
+          document.getElementById("result").innerText = `결과: ${
+            Number(fr) - Number(se)
+          }`;
+        } else if (fr !== "" && se !== "" && bu === "*") {
+          document.getElementById("result").innerText = `결과: ${
+            Number(fr) * Number(se)
+          }`;
+        } else if (fr !== "" && se !== "" && bu === "/") {
+          document.getElementById("result").innerText = `결과: ${
+            Number(fr) / Number(se)
+          }`;
+        } else {
+          document.getElementById("result").innerText = `결과 없음`;
+        }
+        console.log(fr, se);
+      };
+    </script>
+  </body>
+</html>
