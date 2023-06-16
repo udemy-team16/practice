@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <img id="gg" src="imgs/1.jpg" alt="" />
+      <div>
+        <button onclick="pre()" id="pre">이전</button>
+        <button onclick="next()" id="next">다음</button>
+      </div>
+    </div>
+    <script>
+      let a = 0;
+      const imgs = ["imgs/1.jpg", "imgs/2.jpg", "imgs/3.jpg", "imgs/4.jpg"];
+      function pre() {
+        if (a <= 0) {
+          document.getElementById("gg").src = imgs[0];
+        } else {
+          a--;
+          document.getElementById("gg").src = imgs[a];
+        }
+      }
+
+      function next() {
+        if (a >= imgs.length - 1) {
+          document.getElementById("gg").src = imgs[imgs.length - 1];
+        } else {
+          a++;
+          document.getElementById("gg").src = imgs[a];
+        }
+      }
+    </script>
+  </body>
+</html>
